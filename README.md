@@ -1,6 +1,6 @@
 # MD Block Copier
 
-Copy the inner content of fenced ` ```md ` blocks in Visual Studio Code — without the backtick markers.
+Copy the inner content of fenced ` ```md ` blocks in Visual Studio Code, without the backtick markers.
 
 ## ✨ What it does
 

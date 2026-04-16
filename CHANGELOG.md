@@ -4,6 +4,6 @@ All notable changes to the "md-block-copier" extension will be documented in thi
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
-## [Unreleased]
+## [0.1.0]
 
-- Initial release
+- Working Version
