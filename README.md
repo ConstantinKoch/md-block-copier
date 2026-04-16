@@ -1,71 +1,93 @@
-# md-block-copier README
+# MD Block Copier
 
-Automatically Copy md-Blocks in VS Code
+Copy the inner content of fenced ` ```md ` blocks in Visual Studio Code — without the backtick markers.
 
-## Features
+## ✨ What it does
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+- Copies only the content inside ` ```md ` blocks
+- Skips the ` ```md ` / ` ``` ` markers
+- Jump to the next block and copy in one step
 
-For example if there is an image subfolder under your extension project workspace:
+Designed for fast prompt / task extraction workflows.
 
-\!\[feature X\]\(images/feature-x.png\)
+## ⌨️ Shortcuts
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+| Action             | Shortcut         |
+| ------------------ | ---------------- |
+| Copy current block | Cmd + Option + M |
+| Copy next block    | Cmd + Option + N |
 
-## Requirements
+## 🧪 Example
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+Input:
 
-## Extension Settings
+````
+```md
+Task 1
+```
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+```md
+Task 2
+```
+````
 
-For example:
+Result when copying:
 
-This extension contributes the following settings:
+```text
+Task 1
+```
 
-- `myExtension.enable`: Enable/disable this extension.
-- `myExtension.thing`: Set to `blah` to do something.
+Then Cmd + Option + N -> Result:
 
-## Known Issues
+```text
+Task 2
+```
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+## 🚀 Installation (local)
 
-## Release Notes
+1. Build the extension:
 
-Users appreciate release notes as you update your extension.
+   `npm run compile`
 
-### 1.0.0
+2. Package it:
 
-Initial release of ...
+   `vsce package`
 
-### 1.0.1
+3. Install in VS Code:
 
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
+- Open Command Palette
+- Run: Extensions: Install from VSIX
+- Select the generated `.vsix` file
 
 ---
 
-## Following extension guidelines
+## 🛠 Development
 
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
+Run extension in dev mode:
 
-- [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
+`npm run compile`
 
-## Working with Markdown
+Then press:
 
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
+`F5`
 
-- Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-- Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-- Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
+---
 
-## For more information
+## ⚠️ Scope & Limitations
 
-- [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-- [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
+- Only supports fenced ` ```md ` blocks
+- Does NOT support:
+  - ` ```markdown `
+  - `~~~md`
+- mixed or custom fence formats
 
-**Enjoy!**
+This is intentional and optimized for a specific workflow.
+
+## 💡 Notes
+
+- The extension may move your cursor to the selected block
+- Clipboard copy happens automatically
+
+## 📦 Version
+
+0.1.0 – initial usable version

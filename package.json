@@ -1,25 +1,25 @@
 {
   "name": "md-block-copier",
-  "displayName": "md-block-copier",
-  "description": "Automatically Copy md-Blocks in VS Code",
-  "version": "0.0.1",
+  "displayName": "MD Block Copier",
+  "description": "Copy the inner content of fenced ```md blocks in VS Code.",
+  "version": "0.1.0",
+  "publisher": "constantinkoch",
   "engines": {
     "vscode": "^1.116.0"
   },
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
         "command": "md.copyCurrent",
-        "title": "Copy Current MD Block"
+        "title": "MD Block Copier: Copy Current MD Block"
       },
       {
         "command": "md.copyNext",
-        "title": "Copy Next MD Block"
+        "title": "MD Block Copier: Copy Next MD Block"
       }
     ],
     "keybindings": [
@@ -37,22 +37,22 @@
       }
     ]
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ConstantinKoch/md-block-copier.git"
+  },
+  "homepage": "https://github.com/ConstantinKoch/md-block-copier",
+  "bugs": {
+    "url": "https://github.com/ConstantinKoch/md-block-copier/issues"
+  },
   "scripts": {
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",
-    "watch": "tsc -watch -p ./",
-    "pretest": "npm run compile && npm run lint",
-    "lint": "eslint src",
-    "test": "vscode-test"
+    "watch": "tsc -watch -p ./"
   },
   "devDependencies": {
-    "@types/vscode": "^1.116.0",
-    "@types/mocha": "^10.0.10",
     "@types/node": "22.x",
-    "typescript-eslint": "^8.56.1",
-    "eslint": "^9.39.3",
-    "typescript": "^5.9.3",
-    "@vscode/test-cli": "^0.0.12",
-    "@vscode/test-electron": "^2.5.2"
+    "@types/vscode": "^1.116.0",
+    "typescript": "^5.9.3"
   }
 }
